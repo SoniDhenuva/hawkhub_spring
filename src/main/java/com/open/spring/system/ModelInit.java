@@ -33,6 +33,8 @@ import com.open.spring.mvc.bathroom.TeacherJpaRepository;
 import com.open.spring.mvc.bathroom.TinkleJPARepository;
 import com.open.spring.mvc.comment.Comment;
 import com.open.spring.mvc.comment.CommentJPA;
+import com.open.spring.mvc.clubs.SchoolClub;
+import com.open.spring.mvc.clubs.SchoolClubRepository;
 import com.open.spring.mvc.hardAssets.HardAssetsRepository;
 import com.open.spring.mvc.jokes.Jokes;
 import com.open.spring.mvc.jokes.JokesJpaRepository;
@@ -96,6 +98,7 @@ public class ModelInit {
     @Autowired QuizScoreRepository quizScoreRepository;
     @Autowired ResumeJpaRepository resumeJpaRepository;
     @Autowired StatsRepository statsRepository; // curators - stats
+    @Autowired SchoolClubRepository schoolClubRepository;
 
     @Bean
     @Transactional
@@ -458,6 +461,20 @@ public class ModelInit {
                 if (existingPlayers.isEmpty()) {
                     mediaJpaRepository.save(score);
                 }
+            }
+
+            try {
+                if (schoolClubRepository.count() == 0) {
+                    SchoolClub[] defaultClubs = SchoolClub.init();
+
+                    for (SchoolClub schoolClub : defaultClubs) {
+                        schoolClubRepository.save(schoolClub);
+                    }
+
+                    System.out.println("Seeded default SchoolClub rows");
+                }
+            } catch (Exception exception) {
+                System.err.println("Error initializing SchoolClub data: " + exception.getMessage());
             }
 
             // Quiz Score initialization (guarded in case the table doesn't exist yet)

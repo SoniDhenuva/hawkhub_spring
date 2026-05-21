@@ -73,6 +73,19 @@ socket.port=8589
 - Login to ADMIN (toby) user using ADMIN_PASSWORD, examing menus and data
 - Try API endpoint: http://127.0.0.1:8585/api/jokes/
 
+## Clubs API
+
+Club catalog data is now persisted in the backend `school_clubs` table and exposed at `/api/clubs`.
+
+- List clubs: `GET /api/clubs`
+- Filter by category: `GET /api/clubs?category=STEM`
+- Fetch one club: `GET /api/clubs/{id}`
+- Create club: `POST /api/clubs`
+- Update club: `PUT /api/clubs/{id}`
+- Delete club: `DELETE /api/clubs/{id}`
+
+Startup seeding adds a small default club set so the frontend has data immediately after `db_init.py` or a clean startup.
+
 
 ## IDE management
 

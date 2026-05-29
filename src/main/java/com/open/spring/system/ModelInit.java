@@ -184,6 +184,19 @@ public class ModelInit {
                         */
                         // ========== DATABASE CLEANUP - END ==========
 
+                        String createClubFeedPost = "CREATE TABLE IF NOT EXISTS club_feed_post ("
+                                + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                                + "club_id TEXT NOT NULL,"
+                                + "title TEXT NOT NULL,"
+                                + "description TEXT NOT NULL,"
+                                + "image_url TEXT,"
+                                + "topic_path TEXT,"
+                                + "likes INTEGER NOT NULL DEFAULT 0,"
+                                + "created_at DATETIME NOT NULL"
+                                + ");";
+                        st.execute(createClubFeedPost);
+                        System.out.println("Ensured 'club_feed_post' table exists");
+
 
                         String create = "CREATE TABLE IF NOT EXISTS adventure ("
                                 + "id INTEGER PRIMARY KEY AUTOINCREMENT,"

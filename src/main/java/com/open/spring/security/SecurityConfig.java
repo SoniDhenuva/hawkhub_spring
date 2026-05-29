@@ -106,6 +106,7 @@ public class SecurityConfig {
                        .requestMatchers("/api/person/create", "/api/person/create/").permitAll()
                        .requestMatchers(HttpMethod.POST, "/api/person/create").permitAll()
                        .requestMatchers(HttpMethod.POST, "/api/person/create/").permitAll()
+                       .requestMatchers("/api/club-feed/**").permitAll()
                        // Admin-only role management endpoints
                        .requestMatchers(HttpMethod.GET, "/api/users").hasAuthority("ROLE_ADMIN")
                        .requestMatchers(HttpMethod.PUT, "/api/users/*/role").hasAuthority("ROLE_ADMIN")
@@ -228,6 +229,7 @@ public class SecurityConfig {
        policy.put("/api/person/create", "permitAll");
        policy.put("/api/person/create/", "permitAll");
        policy.put("POST /api/person/create", "permitAll");
+       policy.put("/api/club-feed/**", "permitAll");
        policy.put("GET /api/users", "ROLE_ADMIN");
        policy.put("PUT /api/users/*/role", "ROLE_ADMIN");
        policy.put("DELETE /api/person/**", "ROLE_ADMIN");
@@ -245,6 +247,9 @@ public class SecurityConfig {
        CorsConfiguration configuration = new CorsConfiguration();
        configuration.setAllowCredentials(true);
        configuration.addAllowedOriginPattern("http://localhost:4500");
+       configuration.addAllowedOriginPattern("http://127.0.0.1:4500");
+       configuration.addAllowedOriginPattern("http://localhost:4100");
+       configuration.addAllowedOriginPattern("http://127.0.0.1:4100");
        configuration.addAllowedOriginPattern("https://opencodingsociety.com");
        configuration.addAllowedOriginPattern("http://opencodingsociety.com");
        configuration.addAllowedOriginPattern("https://pages.opencodingsociety.com");
@@ -258,6 +263,5 @@ public class SecurityConfig {
 
 
 }
-
 
 

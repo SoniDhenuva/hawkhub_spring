@@ -38,9 +38,13 @@ public class MvcConfig implements WebMvcConfigurer {
                 "https://spring.opencodingsociety.com",
                 "https://springstu.opencodingsociety.com",
                 "http://127.0.0.1:4500",
-                "http://localhost:4500"
+                "http://localhost:4500",
+                "http://127.0.0.1:4100",
+                "http://localhost:4100"
             )
-            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+            .allowedHeaders("*")
+            .allowCredentials(true);
     }
     
 }

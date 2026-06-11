@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface ClubFeedPostRepository extends JpaRepository<ClubFeedPost, Long> {
     List<ClubFeedPost> findAllByOrderByCreatedAtDesc();
     List<ClubFeedPost> findByClubIdOrderByCreatedAtDesc(String clubId);
+    List<ClubFeedPost> findByPostTypeOrderByCreatedAtDesc(String postType);
 }

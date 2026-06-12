@@ -48,7 +48,9 @@ public class ClubFeedPostService {
             posts = posts.stream()
                     .filter(p -> (p.getDescription() != null && p.getDescription().toLowerCase().contains(lowerSearch))
                             || (p.getTitle() != null && p.getTitle().toLowerCase().contains(lowerSearch))
-                            || (p.getTagsCsv() != null && p.getTagsCsv().toLowerCase().contains(lowerSearch)))
+                            || (p.getTagsCsv() != null && p.getTagsCsv().toLowerCase().contains(lowerSearch))
+                            || (p.getClubId() != null && p.getClubId().toLowerCase().contains(lowerSearch))
+                            || (p.getClubIds() != null && p.getClubIds().toLowerCase().contains(lowerSearch)))
                     .collect(Collectors.toList());
         }
 

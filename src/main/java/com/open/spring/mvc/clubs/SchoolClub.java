@@ -58,7 +58,24 @@ public class SchoolClub {
             new SchoolClub("American Cancer Society", List.of("Advocacy/Awareness"), "clubs/acs.png"),
             new SchoolClub("Interact Club", List.of("Charity/Volunteer"), "clubs/interact.png"),
             new SchoolClub("The Featheralist", List.of("Interest/Sport", "Arts"), "clubs/featheralist.png"),
-            new SchoolClub("Link Crew", List.of("Charity/Volunteer"), "clubs/link_crew.png")
+            new SchoolClub("Link Crew", List.of("Charity/Volunteer"), "clubs/link_crew.png"),
+            new SchoolClub("Academic Decathlon", List.of("Competition"), "clubs/academic_decathlon.jpg"),
+            new SchoolClub("Academic League", List.of("Competition"), "clubs/academic_league.jpg"),
+            new SchoolClub("All Girls STEM Society", List.of("STEM", "Advocacy/Awareness"), "clubs/agss.jpg"),
+            new SchoolClub("American Pacific Health Foundation", List.of("Advocacy/Awareness"), "clubs/aphf.jpg"),
+            new SchoolClub("American Red Cross", List.of("Charity/Volunteer", "Advocacy/Awareness"), "clubs/american_red_cross.jpg"),
+            new SchoolClub("Animation Club", List.of("Arts"), "clubs/animation_club.png"),
+            new SchoolClub("Art Cares", List.of("Arts"), "clubs/art_cares.jpg"),
+            new SchoolClub("Best Buddies", List.of("Charity/Volunteer", "Advocacy/Awareness"), "clubs/best_buddies.png"),
+            new SchoolClub("Del Norte Birding Club", List.of("Interest/Sport", "STEM"), "clubs/birding.jpg"),
+            new SchoolClub("Bio Club", List.of("STEM", "Competition"), "clubs/bio_club.jpg"),
+            new SchoolClub("Black Student Union", List.of("Cultural/Society", "Advocacy/Awareness"), "clubs/bsu.jpg"),
+            new SchoolClub("Boys Rugby", List.of("Interest/Sport"), "clubs/boys_rugby.jpg"),
+            new SchoolClub("Brave, Not Perfect", List.of("Advocacy/Awareness"), "clubs/brave_not_perfect.png"),
+            new SchoolClub("Care Club", List.of("Charity/Volunteer"), "clubs/CARE.jpg"),
+            new SchoolClub("Chess Club", List.of("Competition", "Interest/Sport"), "clubs/chess.jpg"),
+            new SchoolClub("Child Rights and You", List.of("Advocacy/Awareness", "Charity/Volunteer"), "clubs/cry.jpg"),
+            new SchoolClub("Christians in Action", List.of("Cultural/Society"), "clubs/cia.jpg")
         };
     }
 }

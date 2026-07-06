@@ -477,14 +477,18 @@ public class ModelInit {
             }
 
             try {
-                if (schoolClubRepository.count() == 0) {
-                    SchoolClub[] defaultClubs = SchoolClub.init();
+                SchoolClub[] defaultClubs = SchoolClub.init();
+                int seeded = 0;
 
-                    for (SchoolClub schoolClub : defaultClubs) {
+                for (SchoolClub schoolClub : defaultClubs) {
+                    if (schoolClubRepository.findByNameIgnoreCase(schoolClub.getName()).isEmpty()) {
                         schoolClubRepository.save(schoolClub);
+                        seeded++;
                     }
+                }
 
-                    System.out.println("Seeded default SchoolClub rows");
+                if (seeded > 0) {
+                    System.out.println("Seeded " + seeded + " default SchoolClub rows");
                 }
             } catch (Exception exception) {
                 System.err.println("Error initializing SchoolClub data: " + exception.getMessage());
